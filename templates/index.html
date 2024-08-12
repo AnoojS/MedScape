@@ -1,0 +1,44 @@
+<!doctype html>
+{% load static %}
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Medscape</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+
+<body>
+    <main>
+        <div class="slider-area">
+            <div class="slider-height">
+                <div class="container">
+                    <div class="hero__caption">
+                        <h1 data-animation="fadeInUp" data-delay=".3s">MedScape</h1>
+                        <p data-animation="fadeInUp" data-delay=".6s">Pneumonia Detection using Deep Learning</p>
+                        <h2>Upload X-ray Image</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <form action="http://127.0.0.1:8000/pneumonia/" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="file" name="image">
+                    <p>Drag your files here or click in this area.</p>
+                    <button type="submit" value="Upload" class="btn" data-animation="fadeInLeft" data-delay=".3s">Upload</button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <script type="text/javascript" src="{% static 'main.js' %}"></script>0
+</body>
+
+</html>

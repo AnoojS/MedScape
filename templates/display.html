@@ -1,0 +1,38 @@
+<!doctype html>
+{% load static %}
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Medscape Diagnosis</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+
+<body>
+    <main>
+        <div class="slider-area">
+            <div class="slider-height">
+                <div class="container">
+                    <div class="hero__caption">
+                        <h1 data-animation="fadeInUp" data-delay=".3s">Diagnosis</h1>
+                    </div>
+                    <div>
+                        <img src="{{ pneumonia_instance.image.url }}" alt="" width="224" height="224">
+                    </div>
+                    <div>
+                        <h2></h2>
+                        <h2>Probability of Pneumonia:{{pneumonia_instance.result}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
